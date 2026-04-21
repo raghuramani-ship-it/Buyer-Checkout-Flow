@@ -1,6 +1,6 @@
 {
-  "name": "SuperBuyer Onboarding",
-  "description": "A friction-free, mobile-first onboarding form for the SuperBuyer subscription service, featuring progressive disclosure and smart validation.",
+  "name": "SuperBuyer AI Onboarding",
+  "description": "A friction-free, mobile-first onboarding form for the SuperBuyer AI subscription service, featuring AI-powered progressive disclosure and smart validation.",
   "requestFramePermissions": [],
   "majorCapabilities": []
 }

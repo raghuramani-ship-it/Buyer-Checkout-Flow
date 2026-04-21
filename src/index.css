@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Caveat:wght@400;700&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-sans: "Inter", -apple-system, sans-serif;
   --font-display: "Inter", -apple-system, sans-serif;
+  --font-handwriting: "Caveat", cursive;
   
   --color-primary: #2563eb;
   --color-primary-dark: #1d4ed8;
@@ -11,6 +12,120 @@
   --color-ink: #0f172a;
   --color-ink-light: #64748b;
   --color-ink-muted: #94a3b8;
+  --color-olx: #3b77d8;
+  --color-carwale: #e33226;
+
+  --color-surface: #FFFFFF;
+  --color-ink: #111827;
+  --color-ink-light: #6B7280;
+  --color-border-premium: #E7E0D6;
+}
+
+@layer utilities {
+  /* Premium Metallic Black */
+  .bg-metallic-black {
+    background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%) !important;
+  }
+
+  /* Golden Metal Text (Sparkly Premium Finish) */
+  .text-golden-metal {
+    background: linear-gradient(to right, #fcf6ba 0%, #bf953f 25%, #8a6e2f 50%, #bf953f 75%, #fcf6ba 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 1px 1px rgba(0,0,0,0.5));
+    animation: metal-flow 6s linear infinite;
+  }
+
+  /* Sparkling Golden Border */
+  .gold-border-sparkle {
+    position: relative;
+    border: 1px solid #bf953f !important;
+  }
+
+  .gold-border-sparkle::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(90deg, transparent, #fff9c4, transparent);
+    background-size: 200% 100%;
+    animation: sparkle-move 4s linear infinite;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    padding: 2px;
+    border-radius: 34px;
+    pointer-events: none;
+    opacity: 0.8;
+    z-index: 10;
+  }
+
+  @keyframes sparkle-move {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  /* Premium Shimmer for Gold */
+  .gold-shimmer {
+    background: linear-gradient(110deg, #F8F1DE 8%, #ffffff 18%, #F8F1DE 33%);
+    background-size: 200% 100%;
+    animation: shine 3s linear infinite;
+  }
+
+  /* Premium Shimmer for Diamond */
+  .diamond-shimmer {
+    background: linear-gradient(110deg, #131A2B 8%, #2A1E4A 18%, #4A2E83 33%);
+    background-size: 200% 100%;
+    animation: shine 5s linear infinite;
+  }
+
+  @keyframes shine {
+    to {
+      background-position-x: -200%;
+    }
+  }
+
+  /* Live metal text effect */
+  .text-sparkle-shimmer {
+    background: linear-gradient(
+      90deg, 
+      #bf953f 0%, 
+      #fcf6ba 25%, 
+      #bf953f 50%, 
+      #fcf6ba 75%, 
+      #bf953f 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: metal-flow 3s linear infinite;
+    display: inline-block;
+  }
+
+  @keyframes metal-flow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+  }
+
+  .diamond-gradient {
+    background: linear-gradient(135deg, #141B2D 0%, #2A1E4A 50%, #4A2E83 100%);
+  }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.fade-enter-from {
+  opacity: 0;
+  transform: translateX(10px);
+}
+
+.fade-leave-to {
+  opacity: 0;
+  transform: translateX(-10px);
 }
 
 body {
